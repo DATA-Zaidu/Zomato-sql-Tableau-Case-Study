@@ -2,6 +2,7 @@
 
 🍽️ Zomato Business Intelligence Case Study
 An End-to-End SQL + Tableau Analytics Project
+
 📌 Project Overview
 
 This project delivers a complete business analysis of Zomato’s food delivery dataset using SQL + BigQuery + Tableau.
