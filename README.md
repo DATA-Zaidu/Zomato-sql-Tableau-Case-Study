@@ -57,6 +57,7 @@ Documentation/
 README.md                      # Project summary & documentation
 
 🧠 Insights & Findings
+
 ⭐ 1. City-Level Insights
 
 Pune and Bangalore recorded the highest order volumes, indicating strong demand concentration in major metro cities.
