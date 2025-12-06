@@ -1,3 +1,5 @@
+![Dashboard Preview](Tableau/Zomato_Dashboard.png)
+
 🍽️ Zomato Business Intelligence Case Study
 An End-to-End SQL + Tableau Analytics Project
 📌 Project Overview
