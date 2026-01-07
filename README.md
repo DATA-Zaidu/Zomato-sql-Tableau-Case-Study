@@ -1,6 +1,9 @@
 🍽️ Zomato Business Intelligence Case Study
+
 End-to-End SQL + BigQuery + Tableau Analytics Project
+
 📌 Project Overview
+
 
 This project presents a business intelligence analysis of Zomato’s food delivery operations using SQL (BigQuery) and Tableau.
 The objective is to understand customer behavior, city-level demand, cuisine performance, delivery efficiency, cancellations, and customer value in order to support data-driven business decisions.
@@ -8,6 +11,7 @@ The objective is to understand customer behavior, city-level demand, cuisine per
 The analysis follows the same workflow used by BI and analytics teams in food-delivery and e-commerce companies.
 
 🎯 Business Questions
+
 
 Which cities and cuisines contribute the highest orders and revenue?
 
@@ -19,7 +23,9 @@ Which customer segments drive the most revenue based on RFM analysis?
 
 How can Zomato improve retention and reduce cancellations?
 
+
 🛠️ Tools & Technologies
+
 
 SQL (Google BigQuery) — data cleaning, joins, aggregations, cohort & RFM analysis
 
@@ -29,7 +35,9 @@ Excel / CSV — dataset preparation
 
 RFM Segmentation — customer value classification using Recency, Frequency, Monetary metrics
 
+
 📊 Key Metrics (KPIs)
+
 Metric	Value
 Total Orders	2,811
 Delivered Revenue	₹7,80,409
@@ -50,6 +58,7 @@ These KPIs form the foundation for operational efficiency, retention strategy, a
 📈 Final Dashboard
 
 🔗 Live Tableau Dashboard
+
 https://public.tableau.com/views/zomato_analysis_17647700669780/Dashboard1
 
 📁 Project Structure
@@ -81,6 +90,7 @@ Built RFM segmentation using NTILE(5) to classify customers by value.
 Visualized operational and customer insights using Tableau dashboards.
 
 🧠 Key Insights & Findings
+
 ⭐ 1. City-Level Performance
 
 Pune and Bangalore generate the highest order volumes and revenue, indicating strong demand concentration in metro cities.
@@ -122,6 +132,7 @@ Lost Customers	No recent orders — low priority for incentives
 RFM segmentation clearly highlights which customer groups drive sustainable growth.
 
 💡 Business Recommendations
+
 📍 1. Improve Delivery Time in Slow Cities
 
 Focus on Hyderabad, Pune, and Mumbai to reduce delays.
