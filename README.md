@@ -1,36 +1,33 @@
-![Dashboard Preview](Tableau/Zomato_Dashboard.png)
-
 🍽️ Zomato Business Intelligence Case Study
-An End-to-End SQL + Tableau Analytics Project
-
+End-to-End SQL + BigQuery + Tableau Analytics Project
 📌 Project Overview
 
-This project delivers a complete business analysis of Zomato’s food delivery dataset using SQL + BigQuery + Tableau.
-The goal is to generate actionable insights into customer behavior, city-level performance, cuisine demand, delivery efficiency, and RFM-based customer segmentation.
+This project presents a business intelligence analysis of Zomato’s food delivery operations using SQL (BigQuery) and Tableau.
+The objective is to understand customer behavior, city-level demand, cuisine performance, delivery efficiency, cancellations, and customer value in order to support data-driven business decisions.
 
-The dashboard answers real industry questions such as:
+The analysis follows the same workflow used by BI and analytics teams in food-delivery and e-commerce companies.
 
-Which cities contribute the highest orders & revenue?
+🎯 Business Questions
 
-What cuisines are most popular among users?
+Which cities and cuisines contribute the highest orders and revenue?
 
-How fast are deliveries across locations?
+How efficient are deliveries across different cities, and where do delays occur?
 
-What percentage of customers are repeat vs new?
+What percentage of customers are repeat buyers, and how valuable are they?
 
-Which customer segments provide the highest value?
+Which customer segments drive the most revenue based on RFM analysis?
 
-This project replicates the analysis approach used in business intelligence teams at food delivery companies.
+How can Zomato improve retention and reduce cancellations?
 
 🛠️ Tools & Technologies
 
-SQL (Google BigQuery) — Data cleaning, transformation, joins, aggregations
+SQL (Google BigQuery) — data cleaning, joins, aggregations, cohort & RFM analysis
 
-Tableau Public — Dashboard creation & visualization
+Tableau Public — interactive dashboard & visual storytelling
 
-Excel / CSV — Data formatting
+Excel / CSV — dataset preparation
 
-RFM Segmentation — Customer lifetime value classification
+RFM Segmentation — customer value classification using Recency, Frequency, Monetary metrics
 
 📊 Key Metrics (KPIs)
 Metric	Value
@@ -40,120 +37,138 @@ Avg Delivery Time	26 minutes
 Cancellation Rate	6.51%
 Repeat Customer Rate	50.39%
 
-These KPIs form the foundation of operational, marketing, and retention strategy.
+Metric Definitions
+
+Delivered Revenue = sum of order value for delivered orders only
+
+Repeat Customer Rate = customers with ≥2 delivered orders / total customers
+
+Cancellation Rate = cancelled orders / total orders
+
+These KPIs form the foundation for operational efficiency, retention strategy, and revenue optimization.
 
 📈 Final Dashboard
 
-🔗 Live Tableau Dashboard:
-(https://public.tableau.com/views/zomato_analysis_17647700669780/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+🔗 Live Tableau Dashboard
+https://public.tableau.com/views/zomato_analysis_17647700669780/Dashboard1
 
 📁 Project Structure
 SQL/
- └── zomato_analysis.sql       # All SQL queries used for analysis
+ └── zomato_analysis.sql        # All SQL queries
+
 Tableau/
- ├── dashboard.png             # Dashboard screenshot
- └── tableau_link.txt          # Public link to dashboard
+ ├── dashboard.png              # Dashboard screenshot
+ └── tableau_link.txt           # Public dashboard link
+
 Dataset/
- └── zomato_orders_dataset.csv # Prepared dataset used in BigQuery
+ └── zomato_orders_dataset.csv  # Dataset used in BigQuery
+
 Documentation/
- └── analysis_notes.txt        # Problem statements, insights & recommendations
-README.md                      # Project summary & documentation
+ └── analysis_notes.txt         # Detailed logic, insights & notes
 
-🧠 Insights & Findings
+README.md                       # Project documentation
 
-⭐ 1. City-Level Insights
+🔍 Analysis Approach
 
-Pune and Bangalore recorded the highest order volumes, indicating strong demand concentration in major metro cities.
+Cleaned and filtered raw order data (removed invalid & cancelled records where required).
 
-Tier-2 cities show moderate activity but rising month-over-month trends → emerging markets for Zomato.
+Aggregated city-level and cuisine-level performance using SQL.
 
-⭐ 2. Cuisine Performance
+Calculated delivery time, cancellation rate, and repeat customer metrics.
 
-Fast Food, North Indian, and Snacks are the top-performing cuisines.
+Built RFM segmentation using NTILE(5) to classify customers by value.
 
-These categories contribute a majority share of total orders and repeat customer activity.
+Visualized operational and customer insights using Tableau dashboards.
 
-⭐ 3. Delivery Time Analysis
+🧠 Key Insights & Findings
+⭐ 1. City-Level Performance
 
-Average delivery time across all cities is 26 minutes, indicating strong operational efficiency.
+Pune and Bangalore generate the highest order volumes and revenue, indicating strong demand concentration in metro cities.
 
-Kolkata & Delhi show the fastest deliveries, while Hyderabad and Pune show slightly higher times due to distance & traffic patterns.
+Tier-2 cities show rising month-over-month activity, highlighting emerging growth opportunities.
 
-⭐ 4. Cancellation Analysis
+⭐ 2. Cuisine Demand
 
-Overall cancellation rate = 6.51%, primarily driven by delays and peak-hour congestion.
+Fast Food, North Indian, and Snacks dominate order volume and repeat purchases.
 
-Cities with longer average delivery times also show slightly higher cancellations → clear operational correlation.
+These cuisines contribute a major share of total revenue, making them critical for promotions.
 
-⭐ 5. Customer Behavior Insights
+⭐ 3. Delivery Efficiency
 
-50.39% customers are repeat buyers, showing strong loyalty and customer stickiness.
+Average delivery time is 26 minutes, reflecting strong overall operations.
 
-New vs repeat user analysis shows consistent month-on-month improvement in retention.
+Kolkata and Delhi show the fastest deliveries, while Hyderabad and Pune have slightly higher delivery times due to traffic and distance.
 
-Higher frequency customers contribute a disproportionate amount of revenue.
+⭐ 4. Cancellations
 
-⭐ 6. RFM Segmentation (Customer Value Classification)
-Segment	Insights
-Champions (R5, F5, M5)	Most engaged, highest revenue customers. Critical to retain.
-Loyal Customers	High frequency, good monetary contribution. Good candidates for rewards.
-Potential Loyalists	New users ordering more frequently. Convert with targeted offers.
-At-Risk Customers	High frequency in the past but low recent activity. Require win-back campaigns.
-Lost Customers	No recent orders; poor recency score. Best for SMS/Email retention efforts.
+Overall cancellation rate is 6.51%.
 
-RFM makes it clear which customer groups matter most for business growth.
+Cities with longer delivery times also show higher cancellation rates, indicating a clear operational correlation.
+
+⭐ 5. Customer Behavior
+
+50.39% of customers are repeat buyers, showing strong customer stickiness.
+
+High-frequency customers contribute a disproportionate share of total revenue, reinforcing the importance of retention.
+
+⭐ 6. RFM Segmentation (Customer Value)
+Segment	Insight
+Champions	Highest value & most engaged customers — critical to retain
+Loyal Customers	Frequent buyers with strong revenue contribution
+Potential Loyalists	New users with rising frequency — high conversion potential
+At-Risk Customers	Previously active but declining engagement
+Lost Customers	No recent orders — low priority for incentives
+
+RFM segmentation clearly highlights which customer groups drive sustainable growth.
 
 💡 Business Recommendations
 📍 1. Improve Delivery Time in Slow Cities
 
-Hyderabad, Pune, and Mumbai need operational improvements to reduce delays.
+Focus on Hyderabad, Pune, and Mumbai to reduce delays.
 
-Suggestion: Better batching, improved routing, and timing-based surge handling.
+Optimize routing, batching, and peak-hour operations.
 
-📍 2. Strengthen Retention Strategy
+📍 2. Strengthen Customer Retention
 
-Since repeat customers contribute ~50% of orders, a loyalty program can significantly increase order frequency.
+Since repeat customers contribute ~50% of orders, introduce loyalty programs:
 
-Eg: Free delivery after 5 orders, points system, personalized cuisine recommendations.
+Free delivery after X orders
+
+Reward points
+
+Personalized cuisine recommendations
 
 📍 3. Focus Marketing on High-Demand Cuisines
 
-Fast Food & North Indian cuisine segments can be promoted further with combo offers.
+Promote Fast Food and North Indian combos in high-volume cities.
 
-Low-demand cuisines can be bundled during off-peak hours.
+Bundle low-demand cuisines during off-peak hours.
 
-📍 4. Reduce Cancellations with Better ETA Predictions
+📍 4. Reduce Cancellations with Better ETA Accuracy
 
-Slight improvement in expected delivery times can directly reduce cancellations.
+Improve expected delivery time predictions to set accurate customer expectations.
 
-ML-based ETA refinement can help.
+Refined ETA models can directly reduce cancellations.
 
-📍 5. Convert “Potential Loyalists” Into Repeat Buyers
+📍 5. Convert Potential Loyalists
 
-Push targeted offers to customers showing increasing frequency but still low recency.
+Target customers with increasing frequency but low recency using:
 
-Personalized notifications → “Order again from your favorite restaurant!”
+Personalized notifications
 
-📦 SQL Highlights Used in Project
+“Order again from your favorite restaurant” nudges
 
-Includes advanced queries:
+📦 SQL Highlights Used in This Project
 
-Total revenue and orders
+City & cuisine-level revenue analysis
 
-City & cuisine analysis
+New vs repeat customer calculation
 
-Repeat user calculation
+Monthly order and revenue trends
 
-New vs repeat monthly trend
-
-Cancellation rate
+Cancellation rate computation
 
 Full RFM segmentation using NTILE(5)
 
-All queries are available in /SQL/query.sql
-
-👨‍💻 About Me
-
-Mohammad Zaid
-Data Analyst | SQL | Tableau | BI Dashboards
-Focused on solving business problems with analytics & storytelling
+All SQL queries are available in:
+📂 /SQL/zomato_analysis.sql
